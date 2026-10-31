@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Owen Breezy - Streaming Website Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+    body{
+      background:#0a0a0a;
+      color:#fff;
+      font-family:Helvetica,Arial,sans-serif;
+    }
+    nav{
+      background:rgba(20,20,20,0.9);
+      backdrop-filter:blur(10px);
+      width:95%;
+      position:fixed;
+      top:10px;
+      left:50%;
+      transform:translateX(-50%);
+      z-index:99;
+      border-radius:30px;
+      border:1px solid #222;
+      padding:8px 16px;
+    }
+    .menu{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .menu ul{
+      display:flex;
+      gap:4px;
+      list-style:none;
+    }
+    .menu a{
+      text-decoration:none;
+      color:#fff;
+      font-size:13px;
+      font-weight:600;
+      padding:6px 10px;
+      border-radius:8px;
+    }
+    .menu a:hover{
+      background:#fff;
+      color:#000;
+    }
+    .hero{
+      padding-top:90px;
+      text-align:center;
+    }
+    .text-content{
+      font-size:3rem;
+      font-weight:900;
+      color:rgba(255,255,255,0.5);
+      cursor:pointer;
+      letter-spacing:-2px;
+      text-align:center;
+      padding-top:20px;
+    }
+    .text-content span{
+      display:inline-block;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s;
+    }
+    .text-content span:hover{
+      transform:scale(1.3) translateY(-10px);
+      color:#fff;
+    }
+    .search-pack{
+      padding:18px;
+      display:flex;
+      justify-content:center;
+    }
+    #search{
+      width:90%;
+      max-width:480px;
+      padding:12px 18px;
+      border-radius:25px;
+      border:1px solid #333;
+      background:#111;
+      color:#fff;
+      font-size:15px;
+    }
+    h1.sec{
+      padding:18px 0 5px 15px;
+      font-size:20px;
+    }
+    .row{
+      display:flex;
+      gap:12px;
+      overflow-x:auto;
+      padding:10px 12px;
+      scrollbar-width:none
+    }
+    .row::-webkit-scrollbar{
+      display:none
+    }
+    .card{
+      min-width:145px;
+      max-width:145px;
+      background:#151515;
+      border-radius:12px;
+      padding:8px;
+      text-align:center;
+      flex-shrink:0;
+      transition:0.2s;
+      border:1px solid #1f1f1f;
+    }
+    .card img{
+      width:100%;
+      height:190px;
+      object-fit:cover;
+      border-radius:8px;
+      background:#222;
+    }
+    .card:hover{
+      transform:scale(1.04);
+      border-color:#444;
+    }
+    .card h4{
+      font-size:12px;
+      margin:7px 0;
+      min-height:30px;
+      line-height:1.2;
+    }
+    .watch-btn{
+      background:#1db954;
+      color:#fff;
+      border:none;
+      padding:6px 12px;
+      border-radius:20px;
+      cursor:pointer;
+      font-weight:bold;
+      width:90%;
+      font-size:12px;
+    }
+    .card span{
+      font-size:10px;
+      color:#888;
+      display:block;
+      margin-top:5px;
+    }
+    hr{
+      border:0;
+      border-top:1px solid #1a1a1a;
+      margin:15px auto;
+      width:92%;
+    }
+    #viewAllBtn{
+      display:block;
+      margin:30px auto;
+      padding:14px 30px;
+      border-radius:30px;
+      border:1px solid #333;
+      background:#fff;
+      color:#000;
+      font-weight:800;
+      font-size:15px;
+      cursor:pointer;
+    }
+    #viewAllBtn:hover{
+      transform:scale(1.05);
+    }
+    .hidden{
+      display:none;
+    }
+  </style>
+</head>
+<body>
+
+<nav><div class="menu">
+<div class="logo"><a href="#"><img src="owen-breezy-tech-logo-pro-transparent.png" alt="logo" width="110" height="36" style="object-fit:contain"></a></div>
+<ul><li><a href="#">Home</a></li><li><a href="#">Contact</a></li></ul>
+</div></nav>
+
+<div class="hero"><h1 class="text-content"><span>O</span><span>W</span><span>A</span><span>M</span><span>I</span><br><span>M</span><span>Z</span><span>E</span><span>L</span><span>E</span><span>M</span><span>U</span></h1></div>
+<div class="search-pack"><input type="text" id="search" placeholder="Search movies..."></div>
+
+<h1 class="sec">New Movies</h1>
+<div class="row">
+  <div class="card"><img src="posters/Spidermanbnd.jpg" loading="lazy" width="145" height="190" alt="Spiderman"><h4>Spiderman - Brand New Day</h4><button class="watch-btn">Watch</button><span>4.9 | 1B+</span></div>
+  <div class="card"><img src="posters/The odyssey.jpg" loading="lazy" alt="The odyssey"><h4>The Odyssey</h4><button class="watch-btn">Watch</button><span>4.8 | 4.7M</span></div>
+  <div class="card"><img src="posters/Supergirl.jpg" loading="lazy" alt="Supergirl"><h4>Supergirl</h4><button class="watch-btn">Watch</button><span>4.9 | 1.7M</span></div>
+  <div class="card"><img src="posters/After everything.jpg" loading="lazy" alt="After everything"><h4>After Everything</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/the running man.jpg" loading="lazy" alt="The running man"><h4>The Running Man</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/Thelasthouse.jpg" loading="lazy" alt="The last house"><h4>The Last House</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/megan 2.jpg" loading="lazy" alt="M3gan 2"><h4>M3gan 2.O</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+</div>
+
+<h1 class="sec">Series Section</h1>
+<div class="row">
+  <div class="card"><img src="posters/it - welcome to derry.jpg" loading="lazy" alt="IT"><h4>IT - Welcome to derry</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/House of david.jpg" loading="lazy" alt="House of david"><h4>House of david</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/House of the dragon.jpg" loading="lazy" alt="House of dragon"><h4>House of the dragon</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/Strangerthings5.jpg" loading="lazy" alt="Stranger Things"><h4>Stranger Things</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/Loki.jpg" loading="lazy" alt="Loki"><h4>Loki</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/moonknight.jpg" loading="lazy" alt="Moon Knight"><h4>Moon Knight</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/The boys.jpg" loading="lazy" alt="The boys"><h4>The boys</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+</div>
+
+<button id="viewAllBtn" onclick="showAll()">View All Movies ↓</button>
+
+<div id="more-movies" class="hidden">
+<hr>
+<h1 class="sec">Popular Now</h1>
+<div class="row">
+  <div class="card"><img src="posters/mortal kombat.jpg" loading="lazy" alt="Mortal Kombat"><h4>Mortal Kombat</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/Jackthegiantslayer.jpg" loading="lazy" alt="Jack"><h4>Jack the giant slayer</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/Madame web.jpg" loading="lazy" alt="Madame web"><h4>Madame web</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/terminator - genisys.jpg" loading="lazy" alt="Terminator"><h4>Terminator - Genisys</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/Sinners.jpg" loading="lazy" alt="Sinners"><h4>Sinners</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/brightburn.jpg" loading="lazy" alt="Brightburn"><h4>Brightburn</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/Sonic the hedgehog.jpg" loading="lazy" alt="Sonic"><h4>Sonic the hedgehog</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+</div>
+<hr>
+<h1 class="sec">Romance</h1>
+<div class="row">
+  <div class="card"><img src="posters/We live in time.jpg" loading="lazy" alt="We live in time"><h4>We live in time</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/Myfaultlondon.jpg" loading="lazy" alt="My fault london"><h4>Myfaultlondon</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/Titanic.jpg" loading="lazy" alt="Titanic"><h4>Titanic</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/Off campus.png" loading="lazy" alt="Off campus"><h4>Off campus</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/After ever happy.jpg" loading="lazy" alt="After ever happy"><h4>After ever happy</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/I met a girl.jpg" loading="lazy" alt="I met a girl"><h4>I met a girl</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/The vow.jpg" loading="lazy" alt="The vow"><h4>The vow</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+</div>
+<hr>
+<h1 class="sec">Horror</h1>
+<div class="row">
+  <div class="card"><img src="posters/the nun 2.jpg" loading="lazy" alt="The nun 2"><h4>The Nun II</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/evil deadrise.jpg" loading="lazy" alt="Evil dead"><h4>Evil Deadrise</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/smile 2.jpg" loading="lazy" alt="Smile 2"><h4>Smile 2</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/Us.png" loading="lazy" alt="Us"><h4>Us</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/Talktome.jpg" loading="lazy" alt="Talk to me"><h4>Talk To Me</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/playhouse.jpg" loading="lazy" alt="Playhouse"><h4>Playhouse</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+  <div class="card"><img src="posters/children of the corn.jpg" loading="lazy" alt="Children"><h4>Children of the corn</h4><button class="watch-btn">Watch</button><span>4.8 | 2M</span></div>
+</div>
+</div>
+
+<script>
+const search = document.getElementById('search');
+const cards = document.querySelectorAll('.card');
+const viewBtn = document.getElementById('viewAllBtn');
+const moreMovies = document.getElementById('more-movies');
+
+function showAll(){
+  moreMovies.classList.remove('hidden');
+  viewBtn.style.display='none';
+  window.scrollBy({top:300, behavior:'smooth'});
+}
+
+search.addEventListener('input', function() {
+  const text = this.value.toLowerCase().trim();
+  const headings = document.querySelectorAll('h1.sec');
+  const hrs = document.querySelectorAll('hr');
+
+  if(text.length > 0){
+    moreMovies.classList.remove('hidden');
+    viewBtn.style.display='none';
+    headings.forEach(h => h.style.display='none');
+    hrs.forEach(hr => hr.style.display='none');
+  } else {
+    cards.forEach(c => c.style.display='');
+    headings.forEach(h => h.style.display='');
+    hrs.forEach(hr => hr.style.display='');
+    moreMovies.classList.add('hidden');
+    viewBtn.style.display='block';
+    return;
+  }
+
+  cards.forEach(card => {
+    const title = card.querySelector('h4').innerText.toLowerCase();
+    card.style.display = title.includes(text) ? '' : 'none';
+  });
+});
+</script>
+
+</body>
+</html>
